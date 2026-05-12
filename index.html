@@ -3,33 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Macieja Jana - Student IT i pasjonat Systemów Embedded.">
     <link rel="stylesheet" href="style.css">
-    <title>SilnyMaciej - Portfolio</title>
+    <title>Maciej Jan | Embedded Systems Portfolio</title>
 </head>
 <body>
-    <header>
-        <h1>Maciej Jan - Portfolio</h1>
-        <p>Embedded Systems | Student IT</p>
+    <header class="main-header">
+        <div class="container">
+            <h1>Maciej Jan</h1>
+            <p class="subtitle">Embedded Systems | Student IT</p>
+        </div>
     </header>
 
-    <main>
-        <section id="about">
+    <main class="container">
+        <section id="about" class="section">
             <h2>O mnie</h2>
-            <p>Witaj! Poniżej znajdziesz moje publiczne projekty pobrane prosto z GitHub.</p>
+            <div class="about-content">
+                <p>Witaj! Specjalizuję się w systemach wbudowanych i programowaniu niskopoziomowym. Poniżej znajdziesz moje publiczne projekty pobrane bezpośrednio z GitHub API.</p>
+            </div>
         </section>
 
-        <section id="projects-container">
+        <section id="projects-container" class="section">
             <h2>Moje Projekty</h2>
             <div id="projects" class="projects-grid">
-                <p>Ładowanie projektów z GitHub...</p>
+                <div class="loader-container">
+                    <div class="loader"></div>
+                    <p>Pobieranie repozytoriów...</p>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 SilnyMaciej | <a href="https://github.com/SilnyMaciej" target="_blank">Profil GitHub</a></p>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 SilnyMaciej | 
+                <a href="https://github.com/SilnyMaciej" target="_blank" rel="noopener">Profil GitHub</a>
+            </p>
+        </div>
     </footer>
 
-        <script src="skrypt.js"></script>
+    <script src="skrypt.js"></script>
 </body>
 </html>
