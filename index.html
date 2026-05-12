@@ -1,13 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Moja Wizytówka</title>
+    <title>SilnyMaciej - Portfolio</title>
 </head>
 <body>
-    <header><h1>Moja Wizytówka - Portfolio</h1></header>
-    <main>Moja wizytówka...</main>
+    <header>
+        <h1>Maciej - Portfolio</h1>
+        <p>Moje projekty prosto z GitHub</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>O mnie</h2>
+            <p>Witaj na mojej wizytówce! Poniżej znajdziesz listę moich publicznych projektów pobieranych w czasie rzeczywistym z API GitHub.</p>
+        </section>
+
+        <section id="projects-container">
+            <h2>Moje Projekty</h2>
+            <div id="projects" class="projects-grid">
+                <!-- Projekty zostaną tu wstawione przez JavaScript -->
+                <p>Ładowanie projektów...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SilnyMaciej | <a href="https://github.com/SilnyMaciej" target="_blank">Mój profil GitHub</a></p>
+    </footer>
+
+    <script>
+        // Skrypt pobierający repozytoria użytkownika SilnyMaciej
+        async function fetchGitHubRepos() {
+            const username = 'SilnyMaciej';
+            const projectsContainer = document.getElementById('projects');
+
+            try {
+                const response = await fetch(`https://github.com/SilnyMaciej{username}/repos?sort=updated`);
+                const repos = await response.json();
+
+                projectsContainer.innerHTML = ''; // Wyczyść napis "Ładowanie..."
+
+                repos.forEach(repo => {
+                    // Pomijamy forki, jeśli chcesz pokazać tylko własne projekty
+                    if (!repo.fork) {
+                        const card = `
+                            <div class="repo-card">
+                                <h3>${repo.name}</h3>
+                                <p>${repo.description || "Brak opisu projektu."}</p>
+                                <div class="tags">
+                                    <span>${repo.language || "Inny"}</span>
+                                    <span>⭐ ${repo.stargazers_count}</span>
+                                </div>
+                                <a href="${repo.html_url}" target="_blank" class="btn">Zobacz kod</a>
+                            </div>
+                        `;
+                        projectsContainer.innerHTML += card;
+                    }
+                });
+            } catch (error) {
+                projectsContainer.innerHTML = '<p>Nie udało się załadować projektów. Sprawdź połączenie.</p>';
+            }
+        }
+
+        fetchGitHubRepos();
+    </script>
 </body>
 </html>
