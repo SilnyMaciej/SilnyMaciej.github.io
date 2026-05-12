@@ -3,33 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maciej Jan - Portfolio Inżynierskie. Embedded Systems & Computer Science.">
     <link rel="stylesheet" href="style.css">
-    <title>SilnyMaciej - Portfolio</title>
+    <title>Maciej Jan | Embedded Engineering</title>
 </head>
 <body>
-    <header>
-        <h1>Maciej Jan - Portfolio</h1>
-        <p>Embedded Systems | Student IT</p>
+    <div class="bg-pattern"></div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">Dostępny do projektów</span>
+                <h1>Maciej Jan</h1>
+                <p class="glitch-text">Embedded Systems | Student IT</p>
+                <div class="header-links">
+                    <a href="#projects-container" class="btn-primary">Zobacz projekty</a>
+                    <a href="https://github.com/SilnyMaciej" target="_blank" class="btn-secondary">GitHub</a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section id="about">
-            <h2>O mnie</h2>
-            <p>Witaj! Poniżej znajdziesz moje publiczne projekty pobrane prosto z GitHub.</p>
+    <main class="container">
+        <section id="about" class="glass-card section-margin">
+            <h2><span class="icon">01.</span> O mnie</h2>
+            <p>Student Informatyki pasjonujący się systemami wbudowanymi i niskopoziomową optymalizacją. Skupiam się na wydajności, czystym kodzie i rozwiązaniach sprzętowych.</p>
         </section>
 
-        <section id="projects-container">
-            <h2>Moje Projekty</h2>
+        <section id="projects-container" class="section-margin">
+            <h2><span class="icon">02.</span> Repozytoria GitHub</h2>
             <div id="projects" class="projects-grid">
-                <p>Ładowanie projektów z GitHub...</p>
+                <div class="loader-wrapper">
+                    <div class="terminal-loader">
+                        <span class="load-text">Fetching data from API...</span>
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 SilnyMaciej | <a href="https://github.com/SilnyMaciej" target="_blank">Profil GitHub</a></p>
+        <div class="container">
+            <div class="footer-grid">
+                <p>&copy; 2026 Maciej Jan. Zbudowano z pasją do sprzętu.</p>
+            </div>
+        </div>
     </footer>
 
-        <script src="skrypt.js"></script>
+    <script src="skrypt.js"></script>
 </body>
 </html>
